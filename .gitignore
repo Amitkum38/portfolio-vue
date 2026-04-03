@@ -8,7 +8,7 @@ patches
 # local env files
 .env.local
 .env.*.local
-.env
+
 .env.sentry-build-plugin
 
 # Log files

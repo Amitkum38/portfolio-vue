@@ -25,6 +25,10 @@ const errors = reactive({
 const submitStatus = ref('idle') // 'idle' | 'submitting' | 'success' | 'error'
 const submitError = ref('')
 
+/** FormSubmit recipient; must be set at build time via `.env`. */
+const contactRecipient = (import.meta.env.VITE_CONTACT_EMAIL ?? '').trim()
+const isContactConfigured = contactRecipient.length > 0
+
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const isSubmitting = computed(() => submitStatus.value === 'submitting')
@@ -89,14 +93,13 @@ function onInput(field) {
  * @see https://formsubmit.co/
  */
 async function sendMessage() {
-  const toEmail = import.meta.env.VITE_CONTACT_EMAIL?.trim()
-  if (!toEmail) {
+  if (!isContactConfigured) {
     throw new Error(
-      'Contact form is not configured. Set VITE_CONTACT_EMAIL in `.env` and restart the dev server.'
+      'Contact form is not configured. Copy `.env.example` to `.env`, set VITE_CONTACT_EMAIL to your inbox address, then restart the dev server.'
     )
   }
 
-  const url = `https://formsubmit.co/ajax/${encodeURIComponent(toEmail)}`
+  const url = `https://formsubmit.co/ajax/${encodeURIComponent(contactRecipient)}`
 
   const res = await fetch(url, {
     method: 'POST',
@@ -158,6 +161,19 @@ async function onSubmit() {
 <template>
   <form class="bg-light p-4 p-md-5 contact-form" novalidate @submit.prevent="onSubmit">
     <div
+      v-if="!isContactConfigured"
+      class="alert alert-warning"
+      role="status"
+    >
+      Contact form is not configured. Copy
+      <code class="small">.env.example</code>
+      to
+      <code class="small">.env</code>
+      , set
+      <code class="small">VITE_CONTACT_EMAIL</code>
+      to the email that should receive messages, then restart the dev server.
+    </div>
+    <div
       v-if="submitStatus === 'success'"
       class="alert alert-success"
       role="status"
@@ -183,7 +199,7 @@ async function onSubmit() {
         name="name"
         autocomplete="name"
         placeholder="Your Name"
-        :disabled="isSubmitting"
+        :disabled="isSubmitting || !isContactConfigured"
         @blur="onBlur('name')"
         @input="onInput('name')"
       />
@@ -203,7 +219,7 @@ async function onSubmit() {
         name="email"
         autocomplete="email"
         placeholder="Your Email"
-        :disabled="isSubmitting"
+        :disabled="isSubmitting || !isContactConfigured"
         @blur="onBlur('email')"
         @input="onInput('email')"
       />
@@ -222,7 +238,7 @@ async function onSubmit() {
         :class="{ 'is-invalid': touched.subject && errors.subject }"
         name="subject"
         placeholder="Subject"
-        :disabled="isSubmitting"
+        :disabled="isSubmitting || !isContactConfigured"
         @blur="onBlur('subject')"
         @input="onInput('subject')"
       />
@@ -242,7 +258,7 @@ async function onSubmit() {
         class="form-control"
         :class="{ 'is-invalid': touched.message && errors.message }"
         placeholder="Message"
-        :disabled="isSubmitting"
+        :disabled="isSubmitting || !isContactConfigured"
         @blur="onBlur('message')"
         @input="onInput('message')"
       ></textarea>
@@ -256,7 +272,7 @@ async function onSubmit() {
         type="submit"
         :value="isSubmitting ? 'Sending…' : 'Send Message'"
         class="btn btn-primary py-3 px-5"
-        :disabled="isSubmitting"
+        :disabled="isSubmitting || !isContactConfigured"
       />
     </div>
   </form>
