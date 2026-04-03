@@ -15,6 +15,7 @@ const imgStyle = {
   backgroundImage: 'url(/images/bg_1.png)',
   backgroundPosition: '82%',
   opacity: 0.3,
+   height: '1022px',
 }
 
 const OWL_OPTIONS = {
