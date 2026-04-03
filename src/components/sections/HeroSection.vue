@@ -78,7 +78,7 @@ onBeforeUnmount(() => {
                 <h1 class="mb-4 mt-3">I'm <span>Amit kumar</span></h1>
                 <h2 class="mb-4">Software Development Engineer Frontend</h2>
                 <p>
-                  <a href="mailto:amitkum9718@gmail.com" target="_blank" class="btn btn-primary py-3 px-4 mr-2">Hire me</a>
+                  <a href="https://portfolio-vue-theta.vercel.app/images/Amit_Kumar_Vue_React_Developer.pdf" target="_blank" class="btn btn-primary py-3 px-4 mr-2">Hire me</a>
                   <a href="https://github.com/Amitkum38" class="btn btn-white btn-outline-white py-3 px-4" target="_blank">My works</a>
                 </p>
               </div>

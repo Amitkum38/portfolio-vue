@@ -12,13 +12,13 @@ const year = computed(() => new Date().getFullYear())
           <div class="ftco-footer-widget mb-3">
             <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5 mb-0">
               <li class="ftco-animate">
-                <a href="https://x.com/amitkum38"><span class="icon-twitter"></span></a>
+                <a href="https://x.com/amitkum9718" target="_blank"><span class="icon-twitter"></span></a>
               </li>
               <li class="ftco-animate">
-                <a href="https://www.linkedin.com/in/amit-kumar-17854165/"><span class="icon-linkedin"></span></a>
+                <a href="https://www.linkedin.com/in/amit-kumar-17854165/" target="_blank"><span class="icon-linkedin"></span></a>
               </li>
               <li class="ftco-animate">
-                <a href="https://github.com/Amitkum38"><span class="icon-github"></span></a>
+                <a href="https://github.com/Amitkum38" target="_blank"><span class="icon-github"></span></a>
               </li>
             </ul>
           </div>

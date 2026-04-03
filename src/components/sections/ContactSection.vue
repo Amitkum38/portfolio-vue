@@ -40,7 +40,7 @@ const contactBg = { backgroundImage: 'url(/images/about.jpg)' }
             </div>
             <h3 class="mb-4">Email Address</h3>
             <p>
-              <a href="mailto:amitkum9718@gmail.com">amitkum9718@gmail.com</a>
+              <a href="mailto:amitkum9718@gmail.com" target="_blank">amitkum9718@gmail.com</a>
             </p>
           </div>
         </div>
@@ -50,7 +50,7 @@ const contactBg = { backgroundImage: 'url(/images/about.jpg)' }
               <span class="icon-globe"></span>
             </div>
             <h3 class="mb-4">Website</h3>
-            <p><a href="#">amitkum9718.github.io</a></p>
+            <p><a href="https://github.com/Amitkum38" target="_blank">amitkum9718.github.io</a></p>
           </div>
         </div>
       </div>
