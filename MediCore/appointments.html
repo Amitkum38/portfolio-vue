@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointment System | Hospital Management System UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+  </head>
+  <body class="bg-slate-100 font-['Inter'] text-slate-700">
+    <div class="min-h-screen lg:pl-72">
+      <aside class="w-full border-b border-slate-200 bg-white px-4 py-5 lg:fixed lg:inset-y-0 lg:left-0 lg:w-72 lg:border-b-0 lg:border-r lg:px-5">
+        <h1 class="text-xl font-bold text-slate-900">MediCore HMS</h1>
+        <p class="text-xs text-slate-500">Hospital Admin Panel</p>
+        <nav class="mt-6 grid grid-cols-2 gap-2 text-sm sm:grid-cols-3 lg:grid-cols-1">
+          <a href="./dashboard.html" class="rounded-xl px-3 py-2.5 font-medium transition hover:bg-slate-100">📊 Dashboard</a>
+          <a href="./patients.html" class="rounded-xl px-3 py-2.5 font-medium transition hover:bg-slate-100">🧑‍⚕️ Patient Management</a>
+          <a href="./doctors.html" class="rounded-xl px-3 py-2.5 font-medium transition hover:bg-slate-100">👨‍⚕️ Doctor Management</a>
+          <a href="./appointments.html" class="rounded-xl bg-cyan-50 px-3 py-2.5 font-semibold text-cyan-700">📅 Appointment System</a>
+          <a href="./billing.html" class="rounded-xl px-3 py-2.5 font-medium transition hover:bg-slate-100">💳 Billing System</a>
+          <a href="./admin-tools.html" class="rounded-xl px-3 py-2.5 font-medium transition hover:bg-slate-100">📈 Reports</a>
+          <a href="./settings.html" class="rounded-xl px-3 py-2.5 font-medium transition hover:bg-slate-100">⚙️ Settings</a>
+        </nav>
+
+        <div class="mt-6 hidden rounded-2xl border border-cyan-100 bg-gradient-to-br from-cyan-50 to-emerald-50 p-4 lg:block">
+          <p class="text-xs font-semibold uppercase tracking-wide text-cyan-700">Today's Queue</p>
+          <p class="mt-2 text-2xl font-bold text-slate-900">38</p>
+          <p class="mt-1 text-xs text-slate-500">Appointments scheduled today</p>
+        </div>
+      </aside>
+
+      <header class="sticky top-0 z-20 border-b border-slate-200 bg-white/95 px-4 py-4 backdrop-blur sm:px-6">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h2 class="text-xl font-bold text-slate-900">Appointment System</h2>
+            <p class="text-xs text-slate-500">Book, manage, and cancel appointments.</p>
+          </div>
+          <button class="rounded-xl bg-cyan-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-cyan-700">View Calendar</button>
+        </div>
+      </header>
+
+      <main class="px-4 py-6 sm:px-6">
+        <div class="grid gap-4 lg:grid-cols-3">
+          <section class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <h3 class="text-lg font-semibold text-slate-900">Book Appointment</h3>
+            <form class="mt-4 space-y-3 text-sm">
+              <input class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3 py-2.5 outline-none transition focus:border-cyan-500 focus:bg-white focus:ring-4 focus:ring-cyan-100" placeholder="Patient Name" />
+              <input class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3 py-2.5 outline-none transition focus:border-cyan-500 focus:bg-white focus:ring-4 focus:ring-cyan-100" placeholder="Doctor Name" />
+              <input type="date" class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3 py-2.5 outline-none transition focus:border-cyan-500 focus:bg-white focus:ring-4 focus:ring-cyan-100" />
+              <input type="time" class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3 py-2.5 outline-none transition focus:border-cyan-500 focus:bg-white focus:ring-4 focus:ring-cyan-100" />
+              <button type="button" class="w-full rounded-xl bg-cyan-600 px-4 py-2.5 font-semibold text-white transition hover:bg-cyan-700">Book Now</button>
+            </form>
+          </section>
+          <section class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm lg:col-span-2">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <h3 class="text-lg font-semibold text-slate-900">Appointment List</h3>
+              <input type="text" placeholder="Search appointment..." class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3 py-2 text-sm outline-none transition focus:border-cyan-500 focus:bg-white focus:ring-4 focus:ring-cyan-100 sm:w-56" />
+            </div>
+            <div class="mt-4 overflow-x-auto">
+              <table class="min-w-full text-left text-sm">
+                <thead><tr class="border-b text-xs uppercase text-slate-500"><th class="px-3 py-2">ID</th><th class="px-3 py-2">Patient</th><th class="px-3 py-2">Doctor</th><th class="px-3 py-2">Date & Time</th><th class="px-3 py-2">Action</th></tr></thead>
+                <tbody class="divide-y divide-slate-100">
+                  <tr class="hover:bg-slate-50"><td class="px-3 py-3 font-medium text-slate-900">A-2214</td><td class="px-3 py-3">Aarav Sharma</td><td class="px-3 py-3">Dr. Priya Nair</td><td class="px-3 py-3">24 Apr, 11:00</td><td class="px-3 py-3"><button class="rounded-lg bg-rose-100 px-2 py-1 text-rose-700">Cancel</button></td></tr>
+                  <tr class="hover:bg-slate-50"><td class="px-3 py-3 font-medium text-slate-900">A-2215</td><td class="px-3 py-3">Neha Verma</td><td class="px-3 py-3">Dr. Sara Khan</td><td class="px-3 py-3">24 Apr, 14:30</td><td class="px-3 py-3"><button class="rounded-lg bg-rose-100 px-2 py-1 text-rose-700">Cancel</button></td></tr>
+                  <tr class="hover:bg-slate-50"><td class="px-3 py-3 font-medium text-slate-900">A-2216</td><td class="px-3 py-3">Riya Menon</td><td class="px-3 py-3">Dr. Aman Gupta</td><td class="px-3 py-3">24 Apr, 17:00</td><td class="px-3 py-3"><button class="rounded-lg bg-rose-100 px-2 py-1 text-rose-700">Cancel</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

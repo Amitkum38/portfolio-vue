@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Hospital Management System UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+  </head>
+  <body class="min-h-screen bg-slate-100 font-['Inter'] text-slate-700">
+    <main class="relative min-h-screen overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-cyan-100 via-white to-emerald-100"></div>
+      <div class="absolute -left-16 top-0 h-72 w-72 rounded-full bg-cyan-300/40 blur-3xl"></div>
+      <div class="absolute -right-12 bottom-0 h-72 w-72 rounded-full bg-emerald-300/30 blur-3xl"></div>
+
+      <section class="relative mx-auto flex min-h-screen max-w-6xl items-center px-4 py-10 sm:px-6 lg:px-8">
+        <div class="grid w-full overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl shadow-slate-300/60 lg:grid-cols-2">
+          <!-- Left marketing panel -->
+          <div
+            class="relative hidden overflow-hidden bg-gradient-to-br from-cyan-700 via-cyan-700 to-blue-700 p-10 text-white lg:block"
+            style="background-image: linear-gradient(to bottom right, rgba(8, 145, 178, 0.88), rgba(29, 78, 216, 0.85)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center;"
+          >
+            <div class="relative z-10">
+              <p class="inline-flex rounded-full border border-cyan-200/30 bg-cyan-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-cyan-100">
+                MediCore Cloud
+              </p>
+              <h1 class="mt-8 text-4xl font-bold leading-tight">Hospital operations made easy.</h1>
+              <p class="mt-4 max-w-md text-sm text-cyan-100">
+                Centralize patient records, doctor schedules, appointments, and billing in one modern healthcare platform.
+              </p>
+
+              <!-- Trust highlights -->
+              <div class="mt-10 space-y-3 text-sm text-cyan-100">
+                <p class="flex items-center gap-2"><span>✓</span> HIPAA-ready workflow design</p>
+                <p class="flex items-center gap-2"><span>✓</span> Smart appointment tracking</p>
+                <p class="flex items-center gap-2"><span>✓</span> Real-time admin insights</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Login form -->
+          <div class="p-6 sm:p-10">
+            <div class="flex items-center justify-between gap-3">
+              <a href="./index.html" class="text-sm font-semibold text-cyan-700 transition hover:text-cyan-600">← Back to project</a>
+              <span class="hidden rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-500 sm:inline-flex">Admin Login</span>
+            </div>
+            <h2 class="mt-5 text-3xl font-bold text-slate-900">Welcome back</h2>
+            <p class="mt-2 text-sm text-slate-500">Sign in to access your hospital command center.</p>
+
+            <!-- Form card -->
+            <div class="mt-8 rounded-2xl border border-slate-200 bg-slate-50/70 p-5 sm:p-6">
+              <form class="space-y-5">
+                <div>
+                  <label for="email" class="mb-2 block text-sm font-medium text-slate-700">Email address</label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    placeholder="admin@hospital.com"
+                    class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100"
+                  />
+                </div>
+                <div>
+                  <label for="password" class="mb-2 block text-sm font-medium text-slate-700">Password</label>
+                  <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    autocomplete="current-password"
+                    placeholder="Enter password"
+                    class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100"
+                  />
+                </div>
+                <div class="flex items-center justify-between text-sm">
+                  <label for="remember" class="flex items-center gap-2 text-slate-600">
+                    <input id="remember" type="checkbox" class="h-4 w-4 rounded border-slate-300 text-cyan-600 focus:ring-cyan-500" />
+                    Remember me
+                  </label>
+                  <a href="./forgot-password.html" class="font-semibold text-cyan-700 transition hover:text-cyan-600">Forgot password?</a>
+                </div>
+                <button
+                  type="button"
+                  class="w-full rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-300/60 transition hover:-translate-y-0.5 hover:opacity-95 focus:outline-none focus:ring-4 focus:ring-cyan-200"
+                >
+                  Sign in securely
+                </button>
+              </form>
+
+              <!-- Optional SSO mock buttons -->
+              <div class="mt-5">
+                <div class="flex items-center gap-3">
+                  <div class="h-px flex-1 bg-slate-200"></div>
+                  <span class="text-xs font-medium uppercase tracking-wide text-slate-400">Or continue with</span>
+                  <div class="h-px flex-1 bg-slate-200"></div>
+                </div>
+                <div class="mt-4 grid grid-cols-2 gap-3">
+                  <button type="button" class="rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-slate-100">Google</button>
+                  <button type="button" class="rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-slate-100">Microsoft</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-5 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-xs text-emerald-700">
+              <span>🔒 Your session is encrypted and secure.</span>
+              <span class="font-semibold">SSL Protected</span>
+            </div>
+
+            <p class="mt-6 text-center text-sm text-slate-600">
+              New user?
+              <a href="./register.html" class="font-semibold text-cyan-700 transition hover:text-cyan-600">Create account</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

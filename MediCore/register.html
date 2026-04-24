@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | Hospital Management System UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+  </head>
+  <body class="min-h-screen bg-slate-100 font-['Inter'] text-slate-700">
+    <main class="relative min-h-screen overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-cyan-100 via-white to-emerald-100"></div>
+      <div class="absolute -left-14 top-10 h-72 w-72 rounded-full bg-cyan-300/35 blur-3xl"></div>
+      <div class="absolute -right-10 bottom-0 h-72 w-72 rounded-full bg-emerald-300/30 blur-3xl"></div>
+      <section class="relative mx-auto flex min-h-screen max-w-6xl items-center px-4 py-10 sm:px-6 lg:px-8">
+        <div class="grid w-full overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl shadow-slate-300/60 lg:grid-cols-2">
+          <!-- Left visual panel -->
+          <div
+            class="relative hidden overflow-hidden bg-gradient-to-br from-cyan-700 via-cyan-700 to-blue-700 p-10 text-white lg:block"
+            style="background-image: linear-gradient(to bottom right, rgba(8, 145, 178, 0.88), rgba(29, 78, 216, 0.85)), url('https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center;"
+          >
+            <div class="relative z-10">
+              <p class="inline-flex rounded-full border border-cyan-200/30 bg-cyan-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-cyan-100">
+                MediCore Cloud
+              </p>
+              <h1 class="mt-8 text-4xl font-bold leading-tight">Create your secure hospital workspace.</h1>
+              <p class="mt-4 max-w-md text-sm text-cyan-100">
+                Register staff and admins with role-based onboarding in a trusted healthcare environment.
+              </p>
+              <div class="mt-10 space-y-3 text-sm text-cyan-100">
+                <p class="flex items-center gap-2"><span>✓</span> Quick staff onboarding</p>
+                <p class="flex items-center gap-2"><span>✓</span> Role-based account setup</p>
+                <p class="flex items-center gap-2"><span>✓</span> Enterprise-grade security</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 sm:p-10">
+            <div class="flex items-center justify-between gap-3">
+              <a href="./login.html" class="text-sm font-semibold text-cyan-700 transition hover:text-cyan-600">← Back to login</a>
+              <span class="hidden rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-500 sm:inline-flex">Create Account</span>
+            </div>
+            <h1 class="mt-4 text-3xl font-bold text-slate-900">Create hospital account</h1>
+            <p class="mt-2 text-sm text-slate-500">Register administrators and staff securely in your healthcare workspace.</p>
+
+            <!-- Registration form -->
+            <div class="mt-8 rounded-2xl border border-slate-200 bg-slate-50/70 p-5 sm:p-6">
+              <form class="grid gap-5 sm:grid-cols-2">
+                <div class="sm:col-span-2">
+                  <label for="fullName" class="mb-2 block text-sm font-medium text-slate-700">Full Name</label>
+                  <input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="Dr. Amit Sharma" class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100" />
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="email" class="mb-2 block text-sm font-medium text-slate-700">Email address</label>
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="staff@hospital.com" class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100" />
+                </div>
+                <div>
+                  <label for="password" class="mb-2 block text-sm font-medium text-slate-700">Password</label>
+                  <input id="password" name="password" type="password" autocomplete="new-password" placeholder="Create password" class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100" />
+                </div>
+                <div>
+                  <label for="role" class="mb-2 block text-sm font-medium text-slate-700">Role</label>
+                  <select id="role" name="role" class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100">
+                    <option>Admin</option>
+                    <option>Doctor</option>
+                    <option>Nurse</option>
+                    <option>Reception Staff</option>
+                  </select>
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="terms" class="flex items-center gap-2 text-sm text-slate-600">
+                    <input id="terms" type="checkbox" class="h-4 w-4 rounded border-slate-300 text-cyan-600 focus:ring-cyan-500" />
+                    I agree to platform terms and hospital data policy.
+                  </label>
+                </div>
+                <div class="sm:col-span-2">
+                  <button type="button" class="w-full rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-300/60 transition hover:-translate-y-0.5 hover:opacity-95 focus:outline-none focus:ring-4 focus:ring-cyan-200">
+                    Create account
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <div class="mt-5 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-xs text-emerald-700">
+              🔒 Staff onboarding is protected with secure role-based access.
+            </div>
+
+            <p class="mt-6 text-center text-sm text-slate-600">
+              Already have an account?
+              <a href="./login.html" class="font-semibold text-cyan-700 transition hover:text-cyan-600">Sign in</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
